@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="646.0" prefWidth="953.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ModifyProductFormController">
+    <children>
+        <AnchorPane layoutX="9.0" layoutY="12.0" prefHeight="620.0" prefWidth="931.0" style="-fx-border-color: black; -fx-border-radius: 10;">
+            <children>
+                <Label layoutX="41.0" layoutY="33.0" text="Modify Product">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Label>
+                <Label layoutX="78.0" layoutY="92.0" text="ID" />
+                <Label layoutX="78.0" layoutY="136.0" text="Name" />
+                <Label layoutX="78.0" layoutY="175.0" text="Inventory" />
+                <Label layoutX="78.0" layoutY="215.0" text="Price" />
+                <Label layoutX="78.0" layoutY="257.0" text="Max" />
+                <TextField fx:id="idField" disable="true" layoutX="135.0" layoutY="88.0" />
+                <TextField fx:id="nameField" layoutX="135.0" layoutY="132.0" />
+                <TextField fx:id="invField" layoutX="135.0" layoutY="171.0" />
+                <TextField fx:id="priceField" layoutX="135.0" layoutY="211.0" />
+                <TextField fx:id="maxField" layoutX="135.0" layoutY="253.0" prefHeight="25.0" prefWidth="84.0" />
+                <Label layoutX="234.0" layoutY="257.0" text="Min" />
+                <TextField fx:id="minField" layoutX="275.0" layoutY="253.0" prefHeight="25.0" prefWidth="84.0" />
+                <TableView fx:id="partTable" layoutX="520.0" layoutY="87.0" prefHeight="193.0" prefWidth="344.0">
+                    <columns>
+                        <TableColumn fx:id="partID" prefWidth="50.0" text="Part ID" />
+                        <TableColumn fx:id="partName" prefWidth="73.0" text="Part Name" />
+                        <TableColumn fx:id="partInventory" prefWidth="102.0" text="Inventory Lvl" />
+                        <TableColumn fx:id="partCost" prefWidth="117.0" text="Price/Cost per Unit" />
+                    </columns>
+                </TableView>
+                <TextField fx:id="searchField" layoutX="667.0" layoutY="41.0" prefHeight="25.0" prefWidth="188.0" promptText="Search by Part ID or Name" />
+                <Button layoutX="781.0" layoutY="298.0" mnemonicParsing="false" onAction="#addHandler" text="Add" />
+                <TableView fx:id="assocTable" layoutX="520.0" layoutY="333.0" prefHeight="193.0" prefWidth="344.0">
+                    <columns>
+                        <TableColumn fx:id="assocID" prefWidth="50.0" text="Part ID" />
+                        <TableColumn fx:id="assocName" prefWidth="73.0" text="Part Name" />
+                        <TableColumn fx:id="assocInventory" prefWidth="102.0" text="Inventory Lvl" />
+                        <TableColumn fx:id="assocCost" prefWidth="117.0" text="Price/Cost per Unit" />
+                    </columns>
+                </TableView>
+                <Button layoutX="738.0" layoutY="535.0" mnemonicParsing="false" onAction="#removeHandler" prefHeight="25.0" prefWidth="123.0" text="Remove Associated Part">
+                    <font>
+                        <Font size="10.0" />
+                    </font>
+                </Button>
+                <Button layoutX="738.0" layoutY="569.0" mnemonicParsing="false" onAction="#saveHandler" prefHeight="25.0" prefWidth="52.0" text="Save" />
+                <Button layoutX="807.0" layoutY="569.0" mnemonicParsing="false" onAction="#cancelHandler" prefHeight="25.0" prefWidth="52.0" text="Cancel" />
+                <Button layoutX="601.0" layoutY="41.0" mnemonicParsing="false" onAction="#searchHandler" prefHeight="25.0" prefWidth="52.0" text="Search" />
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>
